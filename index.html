@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--========== BOX ICONS ==========-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!--========== CSS ==========-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <title>BIO EL WEBSITE</title>
+    <script>
+      const images = ["home.png", "home-nbg.png"]; // Array of image sources
+      let currentIndex = 0;
+
+      function changeImage() {
+        const imgElement = document.getElementById("image");
+        imgElement.style.opacity = 0; // Start fade-out
+
+        setTimeout(() => {
+          currentIndex = (currentIndex + 1) % images.length; // Get the next image index
+          imgElement.src = images[currentIndex]; // Change image source
+          imgElement.style.opacity = 1; // Start fade-in
+        }, 1000); // Wait for the fade-out to complete (1 second)
+      }
+
+      // Change image every 3 seconds
+      setInterval(changeImage, 3000);
+    </script>
+  </head>
+  <body>
+    <!--========== SCROLL TOP ==========-->
+    <a href="#" class="scrolltop" id="scroll-top">
+      <i class="bx bx-chevron-up scrolltop__icon"></i>
+    </a>
+
+    <!--========== HEADER ==========-->
+    <header class="l-header" id="header">
+      <img src="assets\img\rvce.png" style="width: 150px; padding: 10px" />
+      <nav class="nav bd-container">
+        <!-- <a href="#" class="nav__logo"
+          >BIO HAZARDS: MEASUREMENTS AND MANAGEMENT</a
+        > -->
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active-link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">Chatbot</a>
+            </li>
+            <li class="nav__item">
+              <a href="#services" class="nav__link">Dicom Viewer</a>
+            </li>
+            <li class="nav__item">
+              <a href="#menu" class="nav__link">Bio-safety items</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">Contact us</a>
+            </li>
+
+            <li><i class="bx bx-moon change-theme" id="theme-button"></i></li>
+          </ul>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="bx bx-menu"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main class="l-main">
+      <!--========== HOME ==========-->
+      <section class="home" id="home">
+        <div class="home__container bd-container bd-grid">
+          <div class="home__data">
+            <h1 class="home__title">Bio Hazards</h1>
+            <h7 class="home__subtitle">
+              At Bio Hazard Management and Measurement, we specialize in
+              innovative e-waste detection, collection, and safe disposal. Our
+              expert team leverages advanced technology and sustainable
+              practices to minimize environmental impact, promote recycling, and
+              ensure regulatory compliance. Partner with us to responsibly
+              manage hazardous materials and reduce your ecological footprint. </h7
+            ><br /><br />
+            <a
+              href="https://en.wikipedia.org/wiki/Biological_hazard#Levels_of_biohazard"
+              class="button"
+              >View Official website</a
+            >
+          </div>
+
+          <img
+            id="home-nbg"
+            src="assets/img/home.png"
+            alt=""
+            class="home__img"
+          />
+        </div>
+      </section>
+
+      <!--========== ABOUT ==========-->
+      <section class="about section bd-container" id="about">
+        <div class="about__container bd-grid">
+          <div class="about__data">
+            <span class="section-subtitle about__initial">Chatbot</span>
+            <h2 class="section-title about__initial">
+              Any Dobuts on Bio-Hazards? <br />
+              Ask Chatbot
+            </h2>
+            <p class="about__description">
+              Our chatbot provides expert guidance on biohazard measurement and
+              management, offering real-time information on safe disposal
+              practices, regulatory compliance, and environmental impact
+              reduction. It's a reliable tool for organizations seeking to
+              responsibly handle hazardous materials.
+            </p>
+            <a href="templates/chatbot.html" class="button">Explore</a>
+          </div>
+
+          <img src="assets/img/chatbot.png" alt="" class="about__img" />
+        </div>
+      </section>
+
+      <!--========== SERVICES ==========-->
+      <section class="services section bd-container" id="services">
+        <span class="section-subtitle">Special feature</span>
+        <!-- <h2 class="section-title">DICOM VIEWER</h2> -->
+
+        <div class="services__container bd-grid">
+          <div class="services__content">
+            <div>
+              <iframe
+                src="http://127.0.0.1:5501/en/imaios-dicom-viewer.html"
+                width="1000"
+                height="750"
+                style="border: none"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--========== MENU ==========-->
+      <section class="menu section bd-container" id="menu">
+        <span class="section-subtitle">Bio-safety Items</span>
+        <h2 class="section-title">Buy authentic items with lowest price</h2>
+
+        <div class="menu__container bd-grid">
+          <div class="menu__content">
+            <img src="assets/img/plate1.png" alt="" class="menu__img" />
+            <h3 class="menu__name">OTICA Latex Hand Gloves</h3>
+            <span class="menu__detail">100 pcs | Medical Grade 4g</span>
+            <span class="menu__preci"> ₹499</span>
+            <a href="https://amzn.in/d/6C9wHTn" class="button menu__button"
+              ><i class="bx bx-cart-alt"></i
+            ></a>
+          </div>
+
+          <div class="menu__content">
+            <img src="assets/img/plate2.png" alt="" class="menu__img" />
+            <h3 class="menu__name">Careview N95 Non-Woven Fabric</h3>
+            <span class="menu__detail">Pack of 10 | Cotton Universal</span>
+            <span class="menu__preci">₹810</span>
+            <a href="https://amzn.in/d/83hJ585" class="button menu__button"
+              ><i class="bx bx-cart-alt"></i
+            ></a>
+          </div>
+
+          <div class="menu__content">
+            <img src="assets/img/plate3.png" alt="" class="menu__img" />
+            <h3 class="menu__name">PPE Safety Kit/Disposable Full Dress</h3>
+            <span class="menu__detail">Pack Of 2 | White</span>
+            <span class="menu__preci">₹666</span>
+            <a
+              href="https://www.flipkart.com/ladwa-pack-2-complete-ppe-safety-kit-disposable-full-dress-personal-protective-equipment-kit-body-coverall-shoes-jacket/p/itma2b59c39812e9?pid=SJAG3D5EWMDGNVXM&lid=LSTSJAG3D5EWMDGNVXMESDU1A&marketplace=FLIPKART&store=gsx%2Fbfk%2F7zs&srno=b_1_19&otracker=browse&fm=organic&iid=dcbf9dc4-608e-4e7b-95d9-2286d56d9f02.SJAG3D5EWMDGNVXM.SEARCH&ppt=browse&ppn=browse&ssid=xfrfk1jlr40000001723542133447"
+              class="button menu__button"
+              ><i class="bx bx-cart-alt"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <!--========== CONTACT US ==========-->
+      <section class="contact section bd-container" id="contact">
+        <div class="contact__container bd-grid">
+          <div class="contact__data">
+            <span class="section-subtitle contact__initial">Any   Doubts</span>
+            <h2 class="section-title contact__initial">Contact us</h2>
+            <p class="contact__description">
+              If you have any issues or doubts regaring bio-hazards or our
+              products please fell free to contanct us, we will get back to you
+              as soon as possible.
+            </p>
+          </div>
+
+          <div class="contact__button">
+            <button class="button" onclick="togglePopup()">
+              Contact us now
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <button class="close" href="#contact" onclick="closePopup">
+            &times;
+          </button>
+          <div class="phone-number">
+            <p>HITESH S P: 8088753301</p>
+          </div>
+          <div class="phone-number">
+            <p>H R ANEESH TEJAS: 7892350357</p>
+          </div>
+          <div class="phone-number">
+            <p>ARYAN JHA: 9986911240</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--========== FOOTER ==========-->
+    <footer class="footer section bd-container">
+      <div class="footer__container bd-grid">
+        <div class="footer__content">
+          <a href="#" class="footer__logo">BIO-HAZARDS</a>
+          <span class="footer__description">website</span>
+          <div></div>
+        </div>
+
+        <div class="footer__content">
+          <h3 class="footer__title">Services</h3>
+          <ul>
+            <li><a href="#" class="footer__link">Chatbot</a></li>
+            <li><a href="#" class="footer__link">Dicom Viewer</a></li>
+            <li><a href="#" class="footer__link">Online Mart</a></li>
+            <li><a href="#" class="footer__link">Documentation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__content">
+          <h3 class="footer__title">Faculty</h3>
+          <ul>
+            <li>Sura Narendra Kumar</li>
+            <li>B.E, M.Tech, & Ph.D. in Biotechnology</li>
+            <li>narendraks@rvce.edu.in</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footer__copy">&#169; 2024 R.V.C.E All right reserved</p>
+    </footer>
+
+    <!--========== SCROLL REVEAL ==========-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--========== MAIN JS ==========-->
+    <script src="assets/js/main.js"></script>
+    <script>
+      function togglePopup() {
+        const popup = document.getElementById("popup");
+        popup.style.display =
+          popup.style.display === "block" ? "none" : "block";
+      }
+    </script>
+  </body>
+</html>

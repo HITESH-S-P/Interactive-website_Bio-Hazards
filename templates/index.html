@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Doctor Chat</title>
+  </head>
+  <body>
+    <h1>Ask the Doctor</h1>
+    <textarea id="question" placeholder="Type your question here..."></textarea>
+    <button onclick="askQuestion()">Ask</button>
+    <p><strong>Doctor:</strong> <span id="response"></span></p>
+
+    <script>
+      async function askQuestion() {
+        const question = document.getElementById("question").value;
+
+        if (!question) {
+          alert("Question cannot be empty");
+          return;
+        }
+
+        const response = await fetch("http://localhost:5000/api/chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ question: question }),
+        });
+
+        const data = await response.json();
+        document.getElementById("response").innerText = data.response;
+      }
+    </script>
+  </body>
+</html>
